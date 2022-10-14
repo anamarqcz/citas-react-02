@@ -8,12 +8,12 @@ function App() {
   
 
   return (
-  <>
+  <div className="mt-20">
   
   <Header/>
 
   <Listado/>
-  </>
+  </div>
  
   )
 }
