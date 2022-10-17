@@ -1,4 +1,6 @@
+
 function Listado(){
+    
     return(
         <div className="md:w-1/2 lg:w-3/5 overflow-y-scroll md:h-screen box-sizing:border-box">
             <h2 className="font-black text-3xl text-center">Listado Paciente</h2>
@@ -13,6 +15,9 @@ function Listado(){
                     </p>
                     <p className="font-bold m-b3 text-gray-700">
                         Sintomas <span className=" font-normal-case font-normal">Caída de pelo</span>
+                    </p>
+                    <p className="font-bold m-b3 text-gray-700">
+                        alta <span className=" font-normal-case font-normal">Alta</span>
                     </p>
                     <p className="font-bold m-b3 text-gray-700">
                         Propietario <span className=" font-normal-case font-normal">Ana</span>
