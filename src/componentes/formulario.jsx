@@ -28,17 +28,25 @@ function Formulario(pacientes, setPacientes, paciente, setPaciente){
         setError(false)
         const objetoPaciente={mascota, propietario, email, alta, sintomas}
         if (paciente.id){ 
+            objetoPaciente.id=paciente.id
 
+            const pacientesAct=pacientes.map(
+                pacienteState => pacienteState.id === paciente.id ?
+                objetoPaciente:pacienteState
+                )
+                setPacientes(pacientesAct)
+                setPaciente({})
+
+                //iterar o recorrer el arreglo con un .ap o forEach con su parametro pacienteState =>
+        //se hace un if con el formato diferente con sgino de interrogacion
+            
         }else{
             objetoPaciente.id=generarId()
-        }
+        
         //setPacientes(objetoPaciente)
         //iterar paciente y unirlo a objeto
         setPacientes([...pacientes, objetoPaciente])
-
-
-
-
+        }
         //reiniciar el formulario, limpiando cada campo de los input
         setMascota('') 
         setSintomas('') 
@@ -101,7 +109,10 @@ function Formulario(pacientes, setPacientes, paciente, setPaciente){
                     placeholder="Email"
                     value={email}onChange={(e)=> setEmail(e.target.value)}/>
                 </div>
-                <input type="submit"  className="bg-indigo-600 text-white uppercase w-full p-3 mt-5 rounded-md hover:bg-indigo-400 cursor-pointer transition-colors" value={"agregar paciente"}/>
+                <input type="submit"  className="bg-indigo-600 text-white uppercase w-full p-3 mt-5 rounded-md
+                 hover:bg-indigo-400 cursor-pointer transition-colors" 
+                 value={pacientes.id?'Editar paciente':'Agregar paciente'}
+                />
 
 
             </form>

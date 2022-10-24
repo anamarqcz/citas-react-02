@@ -1,5 +1,5 @@
 import Paciente from './pacientes';
-function Listado({pacientes, setPaciente}){
+function Listado({pacientes, setPaciente, eliminarPaciente}){
 
     
     return(
@@ -12,17 +12,24 @@ function Listado({pacientes, setPaciente}){
                 </p>
                 {pacientes.map(Paciente=>(
                    <Paciente
-                    key={paciente.id} setPaciente={setPaciente}
-                    paciente={Paciente}/>)
+                    key={pacientes.id} 
+                    eliminarPaciente={eliminarPaciente}
+                    setPaciente={setPaciente}
+                    paciente={Paciente}
+                    
+                    />)
                     
                 )
                 }
-                <>
+
+                <div>
+
                 <h2 className="font-black text-center text-3xl">No hay pacientes</h2>
+
                 <p className='text-xl text-center mt-5'>Comienza a agregar pacientes  
                     <span className='text-indigo-600 font-bold' >Y apareceràn en este lugar</span>
                 </p>
-                </>
+                </div>
                 
         </div>
 
@@ -31,3 +38,5 @@ function Listado({pacientes, setPaciente}){
 }
 
 export default Listado;
+
+//use effect es un callback que se ejecuta cuando otro componente esta listo
